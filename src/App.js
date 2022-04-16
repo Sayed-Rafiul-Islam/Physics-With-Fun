@@ -12,7 +12,8 @@ import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
-    <div>
+    <div className='text-center mt-4'>
+      <h1 className='text-light'><span className='text-info'>Physics</span> with Fun</h1>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>

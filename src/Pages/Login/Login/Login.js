@@ -38,9 +38,9 @@ const Login = () => {
     return (
         <div className='container w-25'>
 
-            <h2>Please Login</h2>
+            <h2 className='text-light mb-3'>Please <span className='text-info'>Login</span></h2>
             <Form onSubmit={handleLogin}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3 border-light" controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
                 </Form.Group>
 
@@ -48,11 +48,11 @@ const Login = () => {
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="outline-light" type="submit">
                     Login
                 </Button>
             </Form>
-            <p>Don't have an account? <Link className='text-danger link' to='/register' onClick={navigateRegister}>Go to Register</Link></p>
+            <p className='text-light mt-3'>Don't have an account? <Link className='text-info link' to='/register' onClick={navigateRegister}>Go to Register</Link></p>
 
         </div>
     );

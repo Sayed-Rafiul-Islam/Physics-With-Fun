@@ -1,0 +1,9 @@
+.height {
+    height: 320px;
+}
+
+@media (max-width: 576px) {
+    .height {
+        height: 500px;
+    }
+}

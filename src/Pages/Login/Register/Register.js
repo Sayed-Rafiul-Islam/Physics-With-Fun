@@ -47,7 +47,7 @@ const Register = () => {
     return (
         <div className='container w-25'>
 
-            <h2>Please Register</h2>
+            <h2 className='text-light mb-3'>Please <span className='text-info'>Register</span></h2>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Control ref={nameRef} type="text" placeholder="Enter Name" required />
@@ -60,14 +60,14 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Group className="mb-3 text-light text-start" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="outline-light" type="submit">
                     Register
                 </Button>
             </Form>
-            <p>Already have an account? <Link className='text-danger link' to='/login' onClick={navigateLogin}>Go to Login</Link></p>
+            <p className='text-light mt-3'>Already have an account? <Link className='text-info link' to='/login' onClick={navigateLogin}>Go to Login</Link></p>
 
             {/* <form onSubmit={handleRegister}>
                 <input type="text" name="name" id="1" placeholder='Your Name' />
