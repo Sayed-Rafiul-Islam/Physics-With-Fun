@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap';
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Form } from 'react-bootstrap';
 import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -16,7 +16,7 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const handleRegister = event => {
         event.preventDefault();
@@ -26,6 +26,7 @@ const Register = () => {
 
         createUserWithEmailAndPassword(email, password)
     }
+
 
     if (error) {
         const errorText = error.message;
