@@ -12,14 +12,14 @@ const Header = () => {
     }
     return (
         <div className='d-flex justify-content-center my-5'>
-            <CustomLink className='mx-3' to='/home'>Home</CustomLink>
-            <CustomLink className='mx-3' to='/blogs'>Blogs</CustomLink>
-            <CustomLink className='mx-3' to='/about'>About</CustomLink>
+            <CustomLink className='mx-2' to='/home'>Home</CustomLink>
+            <CustomLink className='mx-2' to='/blogs'>Blogs</CustomLink>
+            <CustomLink className='mx-2' to='/about'>About</CustomLink>
             {
                 user ?
-                    <button onClick={handleLogout} className='mx-3 btn btn-outline-light py-0' to='/login'>Logout</button>
+                    <button onClick={handleLogout} className='mx-2 btn btn-outline-light py-0' to='/login'>Logout</button>
                     :
-                    <CustomLink className='mx-3' to='/login'>Login</CustomLink>
+                    <CustomLink className='mx-2' to='/login'>Login</CustomLink>
             }
 
 
