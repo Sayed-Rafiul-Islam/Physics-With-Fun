@@ -11,9 +11,9 @@ const Header = () => {
         signOut(auth);
     }
     return (
-        <div className='d-flex justify-content-center mb-5'>
+        <div className='d-flex justify-content-center my-5'>
             <CustomLink className='mx-3' to='/home'>HOME</CustomLink>
-            <CustomLink className='mx-3' to='/checkout'>Checkout</CustomLink>
+            <CustomLink className='mx-3' to='/blogs'>Blogs</CustomLink>
             <CustomLink className='mx-3' to='/about'>About</CustomLink>
             <CustomLink className='mx-3' to='/register'>Register</CustomLink>
             {
