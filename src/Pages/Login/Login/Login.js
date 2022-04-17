@@ -8,15 +8,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
 
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
-        auth
-    );
 
     const [
         signInWithEmailAndPassword,
@@ -32,6 +28,10 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password)
     }
+    // password reset email handling section 
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+    );
 
     const resetPassword = async () => {
         const email = emailRef.current.value;
@@ -39,19 +39,24 @@ const Login = () => {
         toast('Email has been sent')
     }
 
-    let errorMessage;
     // navigation section 
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
     const navigateRegister = () => {
         navigate('/register');
     }
-    if (error) {
-        errorMessage = <p className='text-danger'>Error: {error?.message}</p>;
-    }
     if (user) {
         navigate(from, { replace: true });
     }
+
+    // error handling section 
+    let errorMessage;
+    if (error) {
+        errorMessage = <p className='text-danger'>Error: {error?.message}</p>;
+    }
+
     return (
         <div className='container w-25'>
 
