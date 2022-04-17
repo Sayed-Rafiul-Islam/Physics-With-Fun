@@ -9,10 +9,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
-
+    // login hanling section 
     const emailRef = useRef('');
     const passwordRef = useRef('');
-
 
     const [
         signInWithEmailAndPassword,
@@ -28,6 +27,7 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password)
     }
+
     // password reset email handling section 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
         auth
