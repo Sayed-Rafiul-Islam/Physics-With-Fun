@@ -3,6 +3,7 @@ import Service from '../Service/Service';
 
 const Services = () => {
 
+    // services data 
     const services = [
         {
             id: 1, title: 'Optics', price: '$99',
