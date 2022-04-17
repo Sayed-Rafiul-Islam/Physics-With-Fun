@@ -5,14 +5,16 @@ import auth from '../../../firebase.init';
 import googleIcon from '../../../images/icons/google.png'
 
 const SocialLogin = () => {
-    const navigate = useNavigate();
 
+    // signin with google handling section 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     let errorMessage;
     if (error) {
         errorMessage = <p className='text-danger'>Error: {error?.message}</p>;
     }
 
+    // navigation section 
+    const navigate = useNavigate();
     if (user) {
         navigate('/home');
     }
