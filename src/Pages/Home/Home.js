@@ -8,7 +8,7 @@ import './Home.css'
 
 const Home = () => {
     return (
-        <div className='ms-3 ms-lg-0'>
+        <div className=' '>
             {/* header  */}
             {/* The banner  */}
             <div className="container-fluid">
