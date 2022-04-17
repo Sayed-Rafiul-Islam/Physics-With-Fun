@@ -7,16 +7,19 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Register.css'
 
 const Register = () => {
-    const nameRef = useRef('');
-    const emailRef = useRef('');
-    const passwordRef = useRef('');
 
+    // Email password authentication section 
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    // registration section 
+    const nameRef = useRef('');
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
 
     const handleRegister = event => {
         event.preventDefault();
@@ -27,13 +30,7 @@ const Register = () => {
         createUserWithEmailAndPassword(email, password)
     }
 
-
-    if (error) {
-        const errorText = error.message;
-    }
-
     // navigation section 
-
     const navigate = useNavigate();
 
     const navigateLogin = () => {
@@ -42,6 +39,12 @@ const Register = () => {
 
     if (user) {
         navigate('/home')
+    }
+
+    // error handling section 
+    let errorMessage;
+    if (error) {
+        errorMessage = <p className='text-danger'>Error: {error?.message}</p>;
     }
 
 
@@ -67,20 +70,9 @@ const Register = () => {
                 <Button variant="outline-light" type="submit">
                     Register
                 </Button>
+                {errorMessage}
             </Form>
             <p className='text-light mt-3'>Already have an account? <Link className='text-info link' to='/login' onClick={navigateLogin}>Go to Login</Link></p>
-
-            {/* <form onSubmit={handleRegister}>
-                <input type="text" name="name" id="1" placeholder='Your Name' />
-
-                <input type="email" name="email" id="2" placeholder='Email Address' />
-
-                <input type="password" name="password" id="3" placeholder='Password' />
-                <input className='btn btn-primary' type="submit" value="Register" />
-            </form>
-
-            <p>Already have an account? <Link className='text-danger link' to='/login' onClick={navigateLogin}>Go to Login</Link></p> */}
-
         </div>
     );
 };
