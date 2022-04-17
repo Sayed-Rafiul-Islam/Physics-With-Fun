@@ -12,7 +12,7 @@ import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
-    <div className='text-center mt-4 container'>
+    <div className='text-center mt-4'>
       <h1 className='text-light'><span className='text-info'>Physics</span> with Fun</h1>
       <Header></Header>
       <Routes>
