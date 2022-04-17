@@ -12,9 +12,15 @@ import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
+
+    // the heading 
     <div className='text-center mt-4'>
       <h1 className='text-light'><span className='text-info'>Physics</span> with Fun</h1>
+
+      {/* the navbar  */}
       <Header></Header>
+
+      {/* the routes  */}
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
