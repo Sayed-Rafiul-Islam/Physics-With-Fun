@@ -9,9 +9,15 @@ import './Home.css'
 const Home = () => {
     return (
         <div className='ms-3 ms-lg-0'>
+            {/* header  */}
+            {/* The banner  */}
             <div className="container-fluid">
                 <img className='w-100' src="https://i.ibb.co/9nrpCGv/banner.jpg" alt="" />
             </div>
+
+            {/* main */}
+
+            {/* section-1 Statistics  */}
             <div className='my-5'>
                 <h1 className='text-light mb-4'><span className='text-info'>S</span>tatistics</h1>
                 <div className='container d-flex flex-column align-items-center flex-lg-row justify-content-lg-around'>
@@ -21,11 +27,13 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* section-2 Services  */}
             <div className='container my-lg-5'>
                 <h1 className='text-center text-light'>My <span className='text-info'>Services</span></h1>
                 <Services className=''></Services>
             </div>
 
+            {/* footer  */}
             <div className='Container-fluid bg text-center text-white py-4'>
                 <h5 className='mb-3'><span className='text-info'>Physics</span> with Fun</h5>
                 <small>Copyright © 2022 Physics with Fun</small><br />
