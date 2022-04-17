@@ -4,9 +4,9 @@ import './Service.css'
 
 const Service = (props) => {
     const { title, price, description, image } = props.service;
+
     const navigate = useNavigate();
     const checkout = () => {
-        console.log('hi')
         navigate('/checkout');
     }
 
