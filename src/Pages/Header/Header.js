@@ -5,8 +5,9 @@ import auth from '../../firebase.init';
 import CustomLink from '../CustomLink/CustomLink'
 
 const Header = () => {
-    const [user] = useAuthState(auth);
 
+    // signout handling section 
+    const [user] = useAuthState(auth);
     const handleLogout = () => {
         signOut(auth);
     }
@@ -21,8 +22,6 @@ const Header = () => {
                     :
                     <CustomLink className='mx-2' to='/login'>Login</CustomLink>
             }
-
-
         </div>
     );
 };
